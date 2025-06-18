@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <form id="prediction-form">
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br>
+            
+            <label>Age:</label>
+            <input type="number" name="age" step="1" min="0" max="120" required><br>
+            
+            <label>Hypertension:</label>
+            <select name="hypertension" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br>
+            
+            <label>Heart Disease:</label>
+            <select name="heart_disease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br>
+            
+            <label>Smoking History:</label>
+            <select name="smoking_history" required>
+                <option value="never">Never</option>
+                <option value="No Info">No Info</option>
+                <option value="current">Current</option>
+                <option value="former">Former</option>
+                <option value="ever">Ever</option>
+                <option value="not current">Not Current</option>
+            </select><br>
+            
+            <label>BMI:</label>
+            <input type="number" name="bmi" step="0.01" min="0" required><br>
+            
+            <label>HbA1c Level:</label>
+            <input type="number" name="hba1c" step="0.1" min="0" required><br>
+            
+            <label>Blood Glucose Level:</label>
+            <input type="number" name="glucose" step="1" min="0" required><br>
+            
+            <button type="submit">Predict</button>
+        </form>
+        
+        <div id="result" style="display: none;">
+            <h2>Prediction Result</h2>
+            <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+            <p><strong>Probability of Diabetes:</strong> <span id="probability"></span>%</p>
+            <h3>Model Performance</h3>
+            <p><strong>Accuracy:</strong> <span id="accuracy"></span></p>
+            <p><strong>Precision:</strong> <span id="precision"></span></p>
+            <p><strong>Recall:</strong> <span id="recall"></span></p>
+            <p><strong>F1 Score:</strong> <span id="f1"></span></p>
+            <h3>Visualizations</h3>
+            <img id="feature-importance" src="" alt="Feature Importance">
+            <img id="confusion-matrix" src="" alt="Confusion Matrix">
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
